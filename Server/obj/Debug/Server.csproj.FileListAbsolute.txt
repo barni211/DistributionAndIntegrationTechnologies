@@ -1,0 +1,6 @@
+D:\Distribution and Integration technologies\Restaurant\Server\bin\Debug\Server.exe.config
+D:\Distribution and Integration technologies\Restaurant\Server\bin\Debug\Server.exe
+D:\Distribution and Integration technologies\Restaurant\Server\bin\Debug\Server.pdb
+D:\Distribution and Integration technologies\Restaurant\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Distribution and Integration technologies\Restaurant\Server\obj\Debug\Server.exe
+D:\Distribution and Integration technologies\Restaurant\Server\obj\Debug\Server.pdb
