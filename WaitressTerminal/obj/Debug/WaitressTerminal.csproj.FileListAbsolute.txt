@@ -13,3 +13,4 @@ D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\obj\Deb
 D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\obj\Debug\WaitressTerminal.pdb
 D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\obj\Debug\WaitressTerminal.WaitressTerminalForm.resources
 D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\obj\Debug\WaitressTerminal.EditOrder.resources
+D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\obj\Debug\WaitressTerminal.NewOrder.resources

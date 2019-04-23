@@ -27,14 +27,14 @@ namespace WaitressTerminal
 
         private void CreateOrderButton_Click(object sender, EventArgs e)
         {
-            //TODO: Create new order and open edit order form
-            EditOrder editOrderForm = new EditOrder();
+            //TODO: Create new order and open edit order form (in parameter Pass type of order kitchen/bar)
+            NewOrder editOrderForm = new NewOrder();
             editOrderForm.ShowDialog();
         }
 
         private void EditOrderButton_Click(object sender, EventArgs e)
         {
-            //TODO: Edit existing order in order form
+            //TODO: Edit existing order in order form 
             EditOrder editOrderForm = new EditOrder();
             editOrderForm.ShowDialog();
         }

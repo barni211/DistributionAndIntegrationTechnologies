@@ -16,5 +16,20 @@ namespace KitchenTerminal
         {
             InitializeComponent();
         }
+
+        private void btnInPreparation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReady_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPicked_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
