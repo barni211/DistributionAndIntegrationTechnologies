@@ -29,25 +29,26 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gvDishCollection = new System.Windows.Forms.DataGridView();
             this.gvOrderedDishes = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddDish = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvDishCollection = new System.Windows.Forms.DataGridView();
             this.colDishId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAddDish = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrderedDishes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,23 +69,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(675, 493);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // gvDishCollection
-            // 
-            this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDishId,
-            this.colDishName,
-            this.colDishType,
-            this.colDishPrice,
-            this.Status});
-            this.gvDishCollection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDishCollection.Location = new System.Drawing.Point(3, 3);
-            this.gvDishCollection.Name = "gvDishCollection";
-            this.gvDishCollection.RowTemplate.Height = 24;
-            this.gvDishCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvDishCollection.Size = new System.Drawing.Size(669, 226);
-            this.gvDishCollection.TabIndex = 0;
-            // 
             // gvOrderedDishes
             // 
             this.gvOrderedDishes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -100,48 +84,6 @@
             this.gvOrderedDishes.RowTemplate.Height = 24;
             this.gvOrderedDishes.Size = new System.Drawing.Size(669, 179);
             this.gvOrderedDishes.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnAddDish);
-            this.flowLayoutPanel1.Controls.Add(this.btnRemove);
-            this.flowLayoutPanel1.Controls.Add(this.btnFind);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 420);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(669, 70);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // btnAddDish
-            // 
-            this.btnAddDish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddDish.Location = new System.Drawing.Point(3, 3);
-            this.btnAddDish.Name = "btnAddDish";
-            this.btnAddDish.Size = new System.Drawing.Size(201, 67);
-            this.btnAddDish.TabIndex = 0;
-            this.btnAddDish.Text = "Add to order";
-            this.btnAddDish.UseVisualStyleBackColor = true;
-            this.btnAddDish.Click += new System.EventHandler(this.btnAddDish_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRemove.Location = new System.Drawing.Point(210, 3);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(231, 67);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove from order";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFind.Location = new System.Drawing.Point(447, 3);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(213, 67);
-            this.btnFind.TabIndex = 2;
-            this.btnFind.Text = "Find";
-            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -176,6 +118,23 @@
             this.colStatus.DataPropertyName = "Status";
             this.colStatus.HeaderText = "Status";
             this.colStatus.Name = "colStatus";
+            // 
+            // gvDishCollection
+            // 
+            this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDishId,
+            this.colDishName,
+            this.colDishType,
+            this.colDishPrice,
+            this.Status});
+            this.gvDishCollection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDishCollection.Location = new System.Drawing.Point(3, 3);
+            this.gvDishCollection.Name = "gvDishCollection";
+            this.gvDishCollection.RowTemplate.Height = 24;
+            this.gvDishCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvDishCollection.Size = new System.Drawing.Size(669, 226);
+            this.gvDishCollection.TabIndex = 0;
             // 
             // colDishId
             // 
@@ -212,6 +171,60 @@
             this.Status.Name = "Status";
             this.Status.Visible = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnAddDish);
+            this.flowLayoutPanel1.Controls.Add(this.btnRemove);
+            this.flowLayoutPanel1.Controls.Add(this.btnFind);
+            this.flowLayoutPanel1.Controls.Add(this.btnSubmit);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 420);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(669, 70);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // btnAddDish
+            // 
+            this.btnAddDish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddDish.Location = new System.Drawing.Point(3, 3);
+            this.btnAddDish.Name = "btnAddDish";
+            this.btnAddDish.Size = new System.Drawing.Size(144, 67);
+            this.btnAddDish.TabIndex = 0;
+            this.btnAddDish.Text = "Add to order";
+            this.btnAddDish.UseVisualStyleBackColor = true;
+            this.btnAddDish.Click += new System.EventHandler(this.btnAddDish_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemove.Location = new System.Drawing.Point(153, 3);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(156, 67);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove from order";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFind.Location = new System.Drawing.Point(315, 3);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(164, 67);
+            this.btnFind.TabIndex = 2;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSubmit.Location = new System.Drawing.Point(485, 3);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(175, 67);
+            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,8 +234,8 @@
             this.Name = "EditOrder";
             this.Text = "EditOrder";
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrderedDishes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -247,5 +260,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

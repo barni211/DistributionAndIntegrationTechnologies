@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,21 +18,48 @@ namespace WaitressTerminal
         {
             InitializeComponent();
 
-            cbDishType.Items.Add("Kitchen");
-            cbDishType.Items.Add("Bar");
-            cbDishType.SelectedItem = "Kitchen";
+            cbDishType.Items.Add(OrderDestination.Kitchen);
+            cbDishType.Items.Add(OrderDestination.Bar);
+            cbDishType.SelectedItem = OrderDestination.Kitchen;
             cbDishType.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            Order order = new Order();
+            order.Destination = (OrderDestination)cbDishType.SelectedItem;
+            if (ValidateTextBox())
+            {
+                order.TableNumber = Int32.Parse(textBox1.Text);
+                EditOrder editOrderForm = new EditOrder(order);
+                this.Hide();
+                editOrderForm.ShowDialog();
+                order = editOrderForm.GetCreatedOrder();
+            }
+            else
+            {
+                MessageBox.Show("Table number should be a numeric value.");
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private bool ValidateTextBox()
+        {
+            try
+            {
+                Int32.Parse(textBox1.Text);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

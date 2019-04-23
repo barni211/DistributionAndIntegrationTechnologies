@@ -72,10 +72,40 @@ namespace WaitressTerminal
 
         private void btnAddDish_Click(object sender, EventArgs e)
         {
+
+            //workaround to refactor. It should be done with one method using interface.
             if (_order.Destination == OrderDestination.Kitchen)
             {
                 AddKitchenDish();
             }
+            else
+            {
+                AddBarDish();
+            }
+        }
+
+        private void AddBarDish()
+        {
+            List<BarDishes> orderedDishes = new List<BarDishes>();
+            List<BarDishes> dishesInGv = gvOrderedDishes.DataSource as List<BarDishes>;
+            if (dishesInGv != null && dishesInGv.Count > 0)
+            {
+                foreach (BarDishes dish in dishesInGv)
+                {
+                    orderedDishes.Add(dish);
+                }
+            }
+
+            if (gvDishCollection.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = gvDishCollection.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = gvDishCollection.Rows[selectedrowindex];
+                BarDishes dish = (BarDishes)selectedRow.DataBoundItem;
+                orderedDishes.Add(dish);
+            }
+
+            gvOrderedDishes.DataSource = orderedDishes;
+            _order.Dishes = orderedDishes;
         }
 
         private void AddKitchenDish()
@@ -99,6 +129,17 @@ namespace WaitressTerminal
             }
 
             gvOrderedDishes.DataSource = orderedDishes;
+            //_order.Dishes = orderedDishes;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public Order GetCreatedOrder()
+        {
+            return _order;
         }
     }
 }

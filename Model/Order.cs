@@ -10,6 +10,6 @@ namespace Model
         public int TableNumber { get; set; }
         public OrderStatus Status { get; set; }
         public OrderDestination Destination { get; set; }
-        public IList<IDishes> Dishes { get; set; }
+        public List<BarDishes> Dishes { get; set; }
     }
 }
