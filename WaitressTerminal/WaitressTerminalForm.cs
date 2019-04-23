@@ -24,5 +24,19 @@ namespace WaitressTerminal
         {
             _connection.InvokeFunc1();
         }
+
+        private void CreateOrderButton_Click(object sender, EventArgs e)
+        {
+            //TODO: Create new order and open edit order form
+            EditOrder editOrderForm = new EditOrder();
+            editOrderForm.ShowDialog();
+        }
+
+        private void EditOrderButton_Click(object sender, EventArgs e)
+        {
+            //TODO: Edit existing order in order form
+            EditOrder editOrderForm = new EditOrder();
+            editOrderForm.ShowDialog();
+        }
     }
 }

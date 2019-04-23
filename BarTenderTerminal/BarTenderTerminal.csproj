@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5FD95A9-056B-454D-85FB-DDBDF2B52235}</ProjectGuid>
+    <ProjectGuid>{B20ED63F-5B84-4AEF-9D74-B750C52333C9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WaitressTerminal</RootNamespace>
-    <AssemblyName>WaitressTerminal</AssemblyName>
+    <RootNamespace>BarTenderTerminal</RootNamespace>
+    <AssemblyName>BarTenderTerminal</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,24 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionHandler.cs" />
-    <Compile Include="EditOrder.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditOrder.Designer.cs">
-      <DependentUpon>EditOrder.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WaitressTerminalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WaitressTerminalForm.Designer.cs">
-      <DependentUpon>WaitressTerminalForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="EditOrder.resx">
-      <DependentUpon>EditOrder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,9 +63,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WaitressTerminalForm.resx">
-      <DependentUpon>WaitressTerminalForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,12 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Server\Server.csproj">
-      <Project>{132f9b08-3cd9-4fe6-9022-66a08b65832d}</Project>
-      <Name>Server</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

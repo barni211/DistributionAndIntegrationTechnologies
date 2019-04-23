@@ -33,14 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.orderManagerLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.CreateOrderButton = new System.Windows.Forms.Button();
+            this.EditOrderButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteOrderButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditOrderButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.DeleteOrderButton = new System.Windows.Forms.Button();
             this.mainLayoutPanel.SuspendLayout();
             this.operationLayoutPanel.SuspendLayout();
             this.orderManagerLayoutPanel.SuspendLayout();
@@ -111,6 +111,38 @@
             this.CreateOrderButton.TabIndex = 0;
             this.CreateOrderButton.Text = "Create order";
             this.CreateOrderButton.UseVisualStyleBackColor = true;
+            this.CreateOrderButton.Click += new System.EventHandler(this.CreateOrderButton_Click);
+            // 
+            // EditOrderButton
+            // 
+            this.EditOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.EditOrderButton.Location = new System.Drawing.Point(208, 3);
+            this.EditOrderButton.Name = "EditOrderButton";
+            this.EditOrderButton.Size = new System.Drawing.Size(180, 55);
+            this.EditOrderButton.TabIndex = 1;
+            this.EditOrderButton.Text = "Edit order";
+            this.EditOrderButton.UseVisualStyleBackColor = true;
+            this.EditOrderButton.Click += new System.EventHandler(this.EditOrderButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(394, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 55);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Submit";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // DeleteOrderButton
+            // 
+            this.DeleteOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DeleteOrderButton.Location = new System.Drawing.Point(3, 64);
+            this.DeleteOrderButton.Name = "DeleteOrderButton";
+            this.DeleteOrderButton.Size = new System.Drawing.Size(199, 55);
+            this.DeleteOrderButton.TabIndex = 3;
+            this.DeleteOrderButton.Text = "Delete order";
+            this.DeleteOrderButton.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -151,36 +183,6 @@
             this.StatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.StatusColumn.HeaderText = "Status";
             this.StatusColumn.Name = "StatusColumn";
-            // 
-            // EditOrderButton
-            // 
-            this.EditOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditOrderButton.Location = new System.Drawing.Point(208, 3);
-            this.EditOrderButton.Name = "EditOrderButton";
-            this.EditOrderButton.Size = new System.Drawing.Size(180, 55);
-            this.EditOrderButton.TabIndex = 1;
-            this.EditOrderButton.Text = "Edit order";
-            this.EditOrderButton.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(394, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 55);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // DeleteOrderButton
-            // 
-            this.DeleteOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DeleteOrderButton.Location = new System.Drawing.Point(3, 64);
-            this.DeleteOrderButton.Name = "DeleteOrderButton";
-            this.DeleteOrderButton.Size = new System.Drawing.Size(199, 55);
-            this.DeleteOrderButton.TabIndex = 3;
-            this.DeleteOrderButton.Text = "Delete order";
-            this.DeleteOrderButton.UseVisualStyleBackColor = true;
             // 
             // WaitressTerminalForm
             // 
