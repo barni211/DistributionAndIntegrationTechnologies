@@ -42,6 +42,7 @@
             this.DestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSend = new System.Windows.Forms.Button();
+            this.btnDeliver = new System.Windows.Forms.Button();
             this.mainLayoutPanel.SuspendLayout();
             this.operationLayoutPanel.SuspendLayout();
             this.orderManagerLayoutPanel.SuspendLayout();
@@ -94,9 +95,10 @@
             // 
             this.orderManagerLayoutPanel.Controls.Add(this.CreateOrderButton);
             this.orderManagerLayoutPanel.Controls.Add(this.EditOrderButton);
-            this.orderManagerLayoutPanel.Controls.Add(this.btnSubmit);
             this.orderManagerLayoutPanel.Controls.Add(this.DeleteOrderButton);
             this.orderManagerLayoutPanel.Controls.Add(this.btnSend);
+            this.orderManagerLayoutPanel.Controls.Add(this.btnDeliver);
+            this.orderManagerLayoutPanel.Controls.Add(this.btnSubmit);
             this.orderManagerLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderManagerLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.orderManagerLayoutPanel.Location = new System.Drawing.Point(3, 54);
@@ -129,7 +131,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSubmit.Location = new System.Drawing.Point(394, 3);
+            this.btnSubmit.Location = new System.Drawing.Point(394, 64);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(180, 55);
             this.btnSubmit.TabIndex = 2;
@@ -140,9 +142,9 @@
             // DeleteOrderButton
             // 
             this.DeleteOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DeleteOrderButton.Location = new System.Drawing.Point(3, 64);
+            this.DeleteOrderButton.Location = new System.Drawing.Point(394, 3);
             this.DeleteOrderButton.Name = "DeleteOrderButton";
-            this.DeleteOrderButton.Size = new System.Drawing.Size(199, 55);
+            this.DeleteOrderButton.Size = new System.Drawing.Size(184, 55);
             this.DeleteOrderButton.TabIndex = 3;
             this.DeleteOrderButton.Text = "Delete order";
             this.DeleteOrderButton.UseVisualStyleBackColor = true;
@@ -197,13 +199,24 @@
             // btnSend
             // 
             this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSend.Location = new System.Drawing.Point(208, 64);
+            this.btnSend.Location = new System.Drawing.Point(3, 64);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(180, 55);
+            this.btnSend.Size = new System.Drawing.Size(199, 55);
             this.btnSend.TabIndex = 4;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnDeliver
+            // 
+            this.btnDeliver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeliver.Location = new System.Drawing.Point(208, 64);
+            this.btnDeliver.Name = "btnDeliver";
+            this.btnDeliver.Size = new System.Drawing.Size(180, 55);
+            this.btnDeliver.TabIndex = 5;
+            this.btnDeliver.Text = "Deliver";
+            this.btnDeliver.UseVisualStyleBackColor = true;
+            this.btnDeliver.Click += new System.EventHandler(this.btnDeliver_Click);
             // 
             // WaitressTerminalForm
             // 
@@ -239,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DestinationColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnDeliver;
     }
 }

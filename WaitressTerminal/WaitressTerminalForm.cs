@@ -68,7 +68,7 @@ namespace WaitressTerminal
             gvOrders.DataSource = ordersFromGv;
         }
 
-        private void UpdateOrder(Order order)
+        private void UpdateOrder(Order order, OrderStatus status)
         {
             int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
@@ -76,7 +76,7 @@ namespace WaitressTerminal
             List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
             if (ordersFromGv != null)
             {
-                ordersFromGv.ElementAt(selectedrowindex).Status = OrderStatus.Sended;
+                ordersFromGv.ElementAt(selectedrowindex).Status = status;
             }
 
             gvOrders.DataSource = null;
@@ -92,7 +92,7 @@ namespace WaitressTerminal
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //TODO: Send bill to printer
+            //TODO: Send order to bill printer
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace WaitressTerminal
                 {
                     SendDishToKitchen();
                 }
-                UpdateOrder(orderToSend);
+                UpdateOrder(orderToSend, OrderStatus.Sended);
             }
 
         }
@@ -142,6 +142,21 @@ namespace WaitressTerminal
             DeleteOrder();
         }
 
+
+        private void btnDeliver_Click(object sender, EventArgs e)
+        {
+            Order orderToDeliver = GetSelectedOrder();
+            if(orderToDeliver.Status == OrderStatus.ReadyToPick)
+            {
+                UpdateOrder(orderToDeliver, OrderStatus.Delivered);
+            }
+            else
+            {
+                MessageBox.Show("Order is not ready.");
+            }
+        }
+
+
         private void SendDishToKitchen()
         {
             //TODO: Send dish to kitchen
@@ -151,6 +166,5 @@ namespace WaitressTerminal
         {
             //TODO: Send dish to bar
         }
-
     }
 }
