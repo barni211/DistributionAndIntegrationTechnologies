@@ -35,7 +35,7 @@ namespace WaitressTerminal
         private void EditOrderButton_Click(object sender, EventArgs e)
         {
             //TODO: Edit existing order in order form 
-            EditOrder editOrderForm = new EditOrder();
+            EditOrder editOrderForm = new EditOrder(null);
             editOrderForm.ShowDialog();
         }
     }

@@ -13,18 +13,35 @@ namespace WaitressTerminal
 {
     public partial class EditOrder : Form
     {
-        private Order order;
+        private Order _order;
         public EditOrder()
         {
             InitializeComponent();
 
             FillUpKitchenDishes();
-            //FillUpBarDishes();
+            
         }
 
         public EditOrder(Order order)
         {
+            InitializeComponent();
 
+            _order = order != null ?  order :  new Order();
+
+            //workaround to refactor
+            if(order ==  null)
+            {
+                _order.Destination = OrderDestination.Kitchen;
+            }
+            
+            if(_order.Destination == OrderDestination.Bar)
+            {
+                FillUpBarDishes();
+            }
+            else
+            {
+                FillUpKitchenDishes();
+            }
         }
 
         private void FillUpKitchenDishes()
@@ -55,7 +72,10 @@ namespace WaitressTerminal
 
         private void btnAddDish_Click(object sender, EventArgs e)
         {
-            AddKitchenDish();
+            if (_order.Destination == OrderDestination.Kitchen)
+            {
+                AddKitchenDish();
+            }
         }
 
         private void AddKitchenDish()
