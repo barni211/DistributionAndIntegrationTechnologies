@@ -1,6 +1,6 @@
 ﻿namespace KitchenTerminal
 {
-    partial class Form1
+    partial class KitchenTerminal
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KitchenTerminal
 {
-    public partial class Form1 : Form
+    public partial class KitchenTerminal : Form
     {
-        public Form1()
+        public KitchenTerminal()
         {
             InitializeComponent();
         }

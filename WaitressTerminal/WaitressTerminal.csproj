@@ -99,6 +99,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{D8D1EB47-3AE5-4EBA-9868-8EF725F25AF6}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Server\Server.csproj">
       <Project>{132f9b08-3cd9-4fe6-9022-66a08b65832d}</Project>
       <Name>Server</Name>

@@ -30,22 +30,22 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gvDishCollection = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvOrderedDishes = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDishId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDishPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddDish = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
+            this.colDishId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDishPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderedDishes)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.gvOrderedDishes, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.gvDishCollection, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,20 +81,20 @@
             this.gvDishCollection.Size = new System.Drawing.Size(669, 226);
             this.gvDishCollection.TabIndex = 0;
             // 
-            // dataGridView1
+            // gvOrderedDishes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvOrderedDishes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvOrderedDishes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 235);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(669, 179);
-            this.dataGridView1.TabIndex = 1;
+            this.gvOrderedDishes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvOrderedDishes.Location = new System.Drawing.Point(3, 235);
+            this.gvOrderedDishes.Name = "gvOrderedDishes";
+            this.gvOrderedDishes.RowTemplate.Height = 24;
+            this.gvOrderedDishes.Size = new System.Drawing.Size(669, 179);
+            this.gvOrderedDishes.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -119,30 +119,6 @@
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.HeaderText = "Dish Price";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // colDishId
-            // 
-            this.colDishId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishId.HeaderText = "Dish Id";
-            this.colDishId.Name = "colDishId";
-            // 
-            // colDishName
-            // 
-            this.colDishName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishName.HeaderText = "Dish Name";
-            this.colDishName.Name = "colDishName";
-            // 
-            // colDishType
-            // 
-            this.colDishType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishType.HeaderText = "Dish Type";
-            this.colDishType.Name = "colDishType";
-            // 
-            // colDishPrice
-            // 
-            this.colDishPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishPrice.HeaderText = "Dish Price";
-            this.colDishPrice.Name = "colDishPrice";
             // 
             // flowLayoutPanel1
             // 
@@ -185,6 +161,34 @@
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
             // 
+            // colDishId
+            // 
+            this.colDishId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishId.DataPropertyName = "Id";
+            this.colDishId.HeaderText = "Dish Id";
+            this.colDishId.Name = "colDishId";
+            // 
+            // colDishName
+            // 
+            this.colDishName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishName.DataPropertyName = "Name";
+            this.colDishName.HeaderText = "Dish Name";
+            this.colDishName.Name = "colDishName";
+            // 
+            // colDishType
+            // 
+            this.colDishType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishType.DataPropertyName = "Type";
+            this.colDishType.HeaderText = "Dish Type";
+            this.colDishType.Name = "colDishType";
+            // 
+            // colDishPrice
+            // 
+            this.colDishPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishPrice.DataPropertyName = "Price";
+            this.colDishPrice.HeaderText = "Dish Price";
+            this.colDishPrice.Name = "colDishPrice";
+            // 
             // EditOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -195,7 +199,7 @@
             this.Text = "EditOrder";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderedDishes)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -205,18 +209,18 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView gvDishCollection;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvOrderedDishes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDishId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDishName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDishType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDishPrice;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnAddDish;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDishId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDishName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDishType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDishPrice;
     }
 }
