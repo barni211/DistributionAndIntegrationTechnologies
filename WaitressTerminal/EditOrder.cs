@@ -29,7 +29,7 @@ namespace WaitressTerminal
             _order = order != null ?  order :  new Order();
 
             //workaround to refactor
-            if(order ==  null)
+            if(order == null)
             {
                 _order.Destination = OrderDestination.Kitchen;
             }
@@ -37,10 +37,12 @@ namespace WaitressTerminal
             if(_order.Destination == OrderDestination.Bar)
             {
                 FillUpBarDishes();
+                gvOrderedDishes.DataSource = _order.Dishes;
             }
             else
             {
                 FillUpKitchenDishes();
+                gvOrderedDishes.DataSource = _order.Dishes;
             }
         }
 

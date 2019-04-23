@@ -14,6 +14,7 @@ namespace WaitressTerminal
 {
     public partial class NewOrder : Form
     {
+        private Order _order;
         public NewOrder()
         {
             InitializeComponent();
@@ -27,15 +28,16 @@ namespace WaitressTerminal
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Order order = new Order();
-            order.Destination = (OrderDestination)cbDishType.SelectedItem;
+            _order = new Order();
+            _order.Id = "new";
+            _order.Destination = (OrderDestination)cbDishType.SelectedItem;
             if (ValidateTextBox())
             {
-                order.TableNumber = Int32.Parse(textBox1.Text);
-                EditOrder editOrderForm = new EditOrder(order);
+                _order.TableNumber = Int32.Parse(textBox1.Text);
+                EditOrder editOrderForm = new EditOrder(_order);
                 this.Hide();
                 editOrderForm.ShowDialog();
-                order = editOrderForm.GetCreatedOrder();
+                _order = editOrderForm.GetCreatedOrder();
             }
             else
             {
@@ -60,6 +62,11 @@ namespace WaitressTerminal
             {
                 return false;
             }
+        }
+
+        public Order ReturnCreatedOrder()
+        {
+            return _order;
         }
     }
 }

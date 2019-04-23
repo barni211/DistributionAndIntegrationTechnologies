@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,13 +31,40 @@ namespace WaitressTerminal
             //TODO: Create new order and open edit order form (in parameter Pass type of order kitchen/bar)
             NewOrder editOrderForm = new NewOrder();
             editOrderForm.ShowDialog();
+            Order createdOrder = editOrderForm.ReturnCreatedOrder();
+            if(createdOrder!=null)
+            {
+                AddOrderToGv(createdOrder);
+            }
         }
 
         private void EditOrderButton_Click(object sender, EventArgs e)
         {
             //TODO: Edit existing order in order form 
-            EditOrder editOrderForm = new EditOrder(null);
-            editOrderForm.ShowDialog();
+            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
+            Order selectedOrder = (Order)selectedRow.DataBoundItem;
+
+            if (selectedOrder != null)
+            {
+                EditOrder editOrderForm = new EditOrder(selectedOrder);
+                editOrderForm.ShowDialog();
+            }
+        }
+
+        private void AddOrderToGv(Order newOrder)
+        {
+            List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
+            if(ordersFromGv != null)
+            {
+                ordersFromGv.Add(newOrder);
+            }
+            else
+            {
+                ordersFromGv = new List<Order>();
+                ordersFromGv.Add(newOrder);
+            }
+            gvOrders.DataSource = ordersFromGv;
         }
     }
 }

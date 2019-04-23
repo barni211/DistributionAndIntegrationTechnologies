@@ -36,7 +36,7 @@
             this.EditOrderButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.DeleteOrderButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvOrders = new System.Windows.Forms.DataGridView();
             this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@
             this.mainLayoutPanel.SuspendLayout();
             this.operationLayoutPanel.SuspendLayout();
             this.orderManagerLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // mainLayoutPanel
@@ -53,7 +53,7 @@
             this.mainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainLayoutPanel.Controls.Add(this.operationLayoutPanel, 1, 0);
-            this.mainLayoutPanel.Controls.Add(this.dataGridView1, 0, 0);
+            this.mainLayoutPanel.Controls.Add(this.gvOrders, 0, 0);
             this.mainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.mainLayoutPanel.Name = "mainLayoutPanel";
@@ -144,24 +144,27 @@
             this.DeleteOrderButton.Text = "Delete order";
             this.DeleteOrderButton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gvOrders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdColumn,
             this.TableColumn,
             this.DestinationColumn,
             this.StatusColumn});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(587, 269);
-            this.dataGridView1.TabIndex = 1;
+            this.gvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvOrders.Location = new System.Drawing.Point(3, 3);
+            this.gvOrders.MultiSelect = false;
+            this.gvOrders.Name = "gvOrders";
+            this.gvOrders.RowTemplate.Height = 24;
+            this.gvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvOrders.Size = new System.Drawing.Size(587, 269);
+            this.gvOrders.TabIndex = 1;
             // 
             // IdColumn
             // 
             this.IdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IdColumn.DataPropertyName = "Id";
             this.IdColumn.HeaderText = "Order Id";
             this.IdColumn.Name = "IdColumn";
             this.IdColumn.ReadOnly = true;
@@ -169,18 +172,21 @@
             // TableColumn
             // 
             this.TableColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TableColumn.DataPropertyName = "TableNumber";
             this.TableColumn.HeaderText = "Table number";
             this.TableColumn.Name = "TableColumn";
             // 
             // DestinationColumn
             // 
             this.DestinationColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DestinationColumn.DataPropertyName = "Destination";
             this.DestinationColumn.HeaderText = "Destination";
             this.DestinationColumn.Name = "DestinationColumn";
             // 
             // StatusColumn
             // 
             this.StatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StatusColumn.DataPropertyName = "Status";
             this.StatusColumn.HeaderText = "Status";
             this.StatusColumn.Name = "StatusColumn";
             // 
@@ -197,7 +203,7 @@
             this.operationLayoutPanel.ResumeLayout(false);
             this.operationLayoutPanel.PerformLayout();
             this.orderManagerLayoutPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrders)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,11 +217,11 @@
         private System.Windows.Forms.Button CreateOrderButton;
         private System.Windows.Forms.Button EditOrderButton;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvOrders;
+        private System.Windows.Forms.Button DeleteOrderButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TableColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DestinationColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
-        private System.Windows.Forms.Button DeleteOrderButton;
     }
 }

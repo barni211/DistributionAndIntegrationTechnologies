@@ -6,7 +6,7 @@ namespace Model
 {
     public class Order
     {
-        public string OrderId { get; set; }
+        public string Id { get; set; }
         public int TableNumber { get; set; }
         public OrderStatus Status { get; set; }
         public OrderDestination Destination { get; set; }
