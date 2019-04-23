@@ -32,7 +32,7 @@ namespace WaitressTerminal
             NewOrder editOrderForm = new NewOrder();
             editOrderForm.ShowDialog();
             Order createdOrder = editOrderForm.ReturnCreatedOrder();
-            if(createdOrder!=null)
+            if (createdOrder != null)
             {
                 AddOrderToGv(createdOrder);
             }
@@ -41,9 +41,7 @@ namespace WaitressTerminal
         private void EditOrderButton_Click(object sender, EventArgs e)
         {
             //TODO: Edit existing order in order form 
-            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
-            Order selectedOrder = (Order)selectedRow.DataBoundItem;
+            Order selectedOrder = GetSelectedOrder();
 
             if (selectedOrder != null)
             {
@@ -55,7 +53,7 @@ namespace WaitressTerminal
         private void AddOrderToGv(Order newOrder)
         {
             List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
-            if(ordersFromGv != null)
+            if (ordersFromGv != null)
             {
                 ordersFromGv.Add(newOrder);
             }
@@ -64,7 +62,95 @@ namespace WaitressTerminal
                 ordersFromGv = new List<Order>();
                 ordersFromGv.Add(newOrder);
             }
+
+            //hack to refresh datagridview, looking for better solution
+            gvOrders.DataSource = null;
             gvOrders.DataSource = ordersFromGv;
         }
+
+        private void UpdateOrder(Order order)
+        {
+            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
+
+            List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
+            if (ordersFromGv != null)
+            {
+                ordersFromGv.ElementAt(selectedrowindex).Status = OrderStatus.Sended;
+            }
+
+            gvOrders.DataSource = null;
+            gvOrders.DataSource = ordersFromGv;
+        }
+
+        private Order GetSelectedOrder()
+        {
+            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
+            return (Order)selectedRow.DataBoundItem;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //TODO: Send bill to printer
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Order orderToSend = GetSelectedOrder();
+            foreach (IDishes dish in orderToSend.Dishes)
+            {
+                if (dish.Status != OrderStatus.NotSend)
+                {
+                    continue;
+                }
+
+                if (dish.Type == OrderDestination.Bar)
+                {
+                    SendDishToBar();
+                }
+                else if (dish.Type == OrderDestination.Kitchen)
+                {
+                    SendDishToKitchen();
+                }
+                UpdateOrder(orderToSend);
+            }
+
+        }
+
+        private void DeleteOrder()
+        {
+            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
+
+            List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
+            if (ordersFromGv != null && ordersFromGv.ElementAt(selectedrowindex).Status == OrderStatus.NotSend)
+            {
+                ordersFromGv.RemoveAt(selectedrowindex);
+                gvOrders.DataSource = null;
+                gvOrders.DataSource = ordersFromGv;
+            }
+            else
+            {
+                MessageBox.Show("Delete sended order is not allowed");
+            }
+
+        }
+
+        private void DeleteOrderButton_Click(object sender, EventArgs e)
+        {
+            DeleteOrder();
+        }
+
+        private void SendDishToKitchen()
+        {
+            //TODO: Send dish to kitchen
+        }
+
+        private void SendDishToBar()
+        {
+            //TODO: Send dish to bar
+        }
+
     }
 }
