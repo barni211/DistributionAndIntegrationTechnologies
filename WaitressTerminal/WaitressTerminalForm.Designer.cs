@@ -59,10 +59,9 @@
             this.mainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.mainLayoutPanel.Name = "mainLayoutPanel";
-            this.mainLayoutPanel.RowCount = 2;
+            this.mainLayoutPanel.RowCount = 1;
             this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainLayoutPanel.Size = new System.Drawing.Size(1186, 550);
+            this.mainLayoutPanel.Size = new System.Drawing.Size(1186, 282);
             this.mainLayoutPanel.TabIndex = 0;
             // 
             // operationLayoutPanel
@@ -77,7 +76,7 @@
             this.operationLayoutPanel.RowCount = 2;
             this.operationLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.95911F));
             this.operationLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.04089F));
-            this.operationLayoutPanel.Size = new System.Drawing.Size(587, 269);
+            this.operationLayoutPanel.Size = new System.Drawing.Size(587, 276);
             this.operationLayoutPanel.TabIndex = 0;
             // 
             // label1
@@ -87,7 +86,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(581, 51);
+            this.label1.Size = new System.Drawing.Size(581, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Order manager";
             // 
@@ -101,9 +100,9 @@
             this.orderManagerLayoutPanel.Controls.Add(this.btnSubmit);
             this.orderManagerLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orderManagerLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.orderManagerLayoutPanel.Location = new System.Drawing.Point(3, 54);
+            this.orderManagerLayoutPanel.Location = new System.Drawing.Point(3, 55);
             this.orderManagerLayoutPanel.Name = "orderManagerLayoutPanel";
-            this.orderManagerLayoutPanel.Size = new System.Drawing.Size(581, 212);
+            this.orderManagerLayoutPanel.Size = new System.Drawing.Size(581, 218);
             this.orderManagerLayoutPanel.TabIndex = 1;
             // 
             // CreateOrderButton
@@ -164,7 +163,7 @@
             this.gvOrders.Name = "gvOrders";
             this.gvOrders.RowTemplate.Height = 24;
             this.gvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvOrders.Size = new System.Drawing.Size(587, 269);
+            this.gvOrders.Size = new System.Drawing.Size(587, 276);
             this.gvOrders.TabIndex = 1;
             // 
             // IdColumn
@@ -222,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 550);
+            this.ClientSize = new System.Drawing.Size(1186, 282);
             this.Controls.Add(this.mainLayoutPanel);
             this.Name = "WaitressTerminalForm";
             this.Text = "WaitressTerminalForm";
