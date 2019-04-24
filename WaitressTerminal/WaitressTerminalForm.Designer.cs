@@ -152,6 +152,7 @@
             // gvOrders
             // 
             this.gvOrders.AllowUserToAddRows = false;
+            this.gvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdColumn,

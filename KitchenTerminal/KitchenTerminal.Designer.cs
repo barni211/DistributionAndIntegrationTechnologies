@@ -105,6 +105,7 @@
             // 
             // gvDishCollection
             // 
+            this.gvDishCollection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDishId,
@@ -118,6 +119,7 @@
             this.gvDishCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvDishCollection.Size = new System.Drawing.Size(794, 354);
             this.gvDishCollection.TabIndex = 1;
+            this.gvDishCollection.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvDishCollection_CellFormatting);
             // 
             // colDishId
             // 

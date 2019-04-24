@@ -71,6 +71,7 @@
             // 
             // gvOrderedDishes
             // 
+            this.gvOrderedDishes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvOrderedDishes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrderedDishes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -121,6 +122,7 @@
             // 
             // gvDishCollection
             // 
+            this.gvDishCollection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDishId,

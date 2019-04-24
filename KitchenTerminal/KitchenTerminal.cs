@@ -42,7 +42,8 @@ namespace KitchenTerminal
             Order orderToUpdate = GvOperations.GetSelectedOrder(gvDishCollection);
             GvOperations.UpdateOrder(orderToUpdate, OrderStatus.Preparation, gvDishCollection);
             ShowDishes dishesForm = new ShowDishes(orderToUpdate);
-            dishesForm.Show();
+            dishesForm.ShowDialog();
+            GvOperations.UpdateOrder(orderToUpdate, dishesForm.CurrentStatus(), gvDishCollection);
             //TODO: Send information to server
         }
 
@@ -58,6 +59,11 @@ namespace KitchenTerminal
             Order orderToUpdate = GvOperations.GetSelectedOrder(gvDishCollection);
             GvOperations.UpdateOrder(orderToUpdate, OrderStatus.Picked, gvDishCollection);
             //TODO: Send information to server
+        }
+
+        private void gvDishCollection_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            GvOperations.ColorGridviewRows(gvDishCollection);
         }
     }
 }
