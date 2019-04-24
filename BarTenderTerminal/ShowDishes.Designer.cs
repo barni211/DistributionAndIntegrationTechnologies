@@ -78,6 +78,7 @@
             this.btnReady.TabIndex = 0;
             this.btnReady.Text = "Ready";
             this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // btnClose
             // 
@@ -87,11 +88,13 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(380, 84);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Cancel";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // gvOrderedDishes
             // 
+            this.gvOrderedDishes.AllowUserToAddRows = false;
             this.gvOrderedDishes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrderedDishes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -103,6 +106,7 @@
             this.gvOrderedDishes.Location = new System.Drawing.Point(3, 3);
             this.gvOrderedDishes.Name = "gvOrderedDishes";
             this.gvOrderedDishes.RowTemplate.Height = 24;
+            this.gvOrderedDishes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvOrderedDishes.Size = new System.Drawing.Size(791, 354);
             this.gvOrderedDishes.TabIndex = 2;
             // 

@@ -40,7 +40,8 @@ namespace BarTenderTerminal
             Order orderToUpdate = GvOperations.GetSelectedOrder(gvDishCollection);
             GvOperations.UpdateOrder(orderToUpdate, OrderStatus.Preparation, gvDishCollection);
             ShowDishes dishesForm = new ShowDishes(orderToUpdate);
-            dishesForm.Show();
+            dishesForm.ShowDialog();
+            GvOperations.UpdateOrder(orderToUpdate, dishesForm.CurrentStatus(), gvDishCollection);
             //TODO: Send information to server
         }
 
@@ -61,6 +62,11 @@ namespace BarTenderTerminal
         private void gvDishCollection_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void gvDishCollection_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            GvOperations.ColorGridviewRows(gvDishCollection);
         }
     }
 }

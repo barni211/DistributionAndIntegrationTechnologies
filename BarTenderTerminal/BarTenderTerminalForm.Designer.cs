@@ -76,6 +76,7 @@
             this.gvDishCollection.Size = new System.Drawing.Size(794, 354);
             this.gvDishCollection.TabIndex = 1;
             this.gvDishCollection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDishCollection_CellContentClick);
+            this.gvDishCollection.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvDishCollection_CellFormatting);
             // 
             // flowLayoutPanel1
             // 

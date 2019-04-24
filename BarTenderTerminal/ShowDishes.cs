@@ -30,5 +30,22 @@ namespace BarTenderTerminal
         {
 
         }
+
+        private void btnReady_Click(object sender, EventArgs e)
+        {
+            _order.Status = OrderStatus.ReadyToPick;
+            this.Close();
+        }
+
+        public OrderStatus CurrentStatus()
+        {
+            return _order.Status;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            _order.Status = OrderStatus.Sended;
+            this.Close();
+        }
     }
 }
