@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model
 {
-    public abstract class IDishes
+    public class Dish
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -6,6 +6,6 @@ namespace Model
 {
     public enum OrderStatus
     {
-        NotSend, Sended, Preparation, ReadyToPick, Delivered
+        NotSend, Sended, Preparation, ReadyToPick, Delivered, Done
     }
 }

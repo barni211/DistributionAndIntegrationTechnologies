@@ -28,7 +28,6 @@ namespace WaitressTerminal
 
         private void CreateOrderButton_Click(object sender, EventArgs e)
         {
-            //TODO: Create new order and open edit order form (in parameter Pass type of order kitchen/bar)
             NewOrder editOrderForm = new NewOrder();
             editOrderForm.ShowDialog();
             Order createdOrder = editOrderForm.ReturnCreatedOrder();
@@ -92,13 +91,14 @@ namespace WaitressTerminal
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Order orderToSend = GetSelectedOrder();
             //TODO: Send order to bill printer
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
             Order orderToSend = GetSelectedOrder();
-            foreach (IDishes dish in orderToSend.Dishes)
+            foreach (Dish dish in orderToSend.Dishes)
             {
                 if (dish.Status != OrderStatus.NotSend)
                 {
