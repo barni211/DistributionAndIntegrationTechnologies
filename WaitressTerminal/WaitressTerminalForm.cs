@@ -13,6 +13,7 @@ namespace WaitressTerminal
 {
     public partial class WaitressTerminalForm : Form
     {
+        private bool _isFirstTimeLoading = true;
         private ConnectionHandler _connection;
         public WaitressTerminalForm()
         {
@@ -98,22 +99,30 @@ namespace WaitressTerminal
         private void btnSend_Click(object sender, EventArgs e)
         {
             Order orderToSend = GetSelectedOrder();
-            foreach (Dish dish in orderToSend.Dishes)
-            {
-                if (dish.Status != OrderStatus.NotSend)
-                {
-                    continue;
-                }
+            //foreach (Dish dish in orderToSend.Dishes)
+            //{
+            //    if (dish.Status != OrderStatus.NotSend)
+            //    {
+            //        continue;
+            //    }
 
-                if (dish.Type == OrderDestination.Bar)
-                {
-                    SendDishToBar();
-                }
-                else if (dish.Type == OrderDestination.Kitchen)
-                {
-                    SendDishToKitchen();
-                }
-                UpdateOrder(orderToSend, OrderStatus.Sended);
+            //    if (dish.Type == OrderDestination.Bar)
+            //    {
+            //        SendDishToBar();
+            //    }
+            //    else if (dish.Type == OrderDestination.Kitchen)
+            //    {
+            //        SendDishToKitchen();
+            //    }
+            //    UpdateOrder(orderToSend, OrderStatus.Sended);
+            //}
+            if (orderToSend.Destination == OrderDestination.Bar)
+            {
+                SendOrderToBar();
+            }
+            else if (orderToSend.Destination == OrderDestination.Kitchen)
+            {
+                SendOrderToKitchen();
             }
 
         }
@@ -146,7 +155,7 @@ namespace WaitressTerminal
         private void btnDeliver_Click(object sender, EventArgs e)
         {
             Order orderToDeliver = GetSelectedOrder();
-            if(orderToDeliver.Status == OrderStatus.ReadyToPick)
+            if (orderToDeliver.Status == OrderStatus.ReadyToPick)
             {
                 UpdateOrder(orderToDeliver, OrderStatus.Delivered);
             }
@@ -156,15 +165,53 @@ namespace WaitressTerminal
             }
         }
 
+        private void ColorGridviewRows()
+        {
+            if (gvOrders.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in gvOrders.Rows)
+                {
+                    OrderStatus status = (OrderStatus)row.Cells[3].Value;
+                    if (status == OrderStatus.ReadyToPick)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Green;
+                    }
+                    else if (status == OrderStatus.NotSend)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                    }
+                    else if (status == OrderStatus.Sended || status == OrderStatus.Preparation)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+                    else if (status == OrderStatus.Done)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Gray;
+                    }
+                }
+            }
 
-        private void SendDishToKitchen()
+        }
+
+
+        private void SendOrderToKitchen()
         {
             //TODO: Send dish to kitchen
         }
 
-        private void SendDishToBar()
+        private void SendOrderToBar()
         {
             //TODO: Send dish to bar
+        }
+
+        private void gvOrders_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            ColorGridviewRows();
+        }
+
+        private void gvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

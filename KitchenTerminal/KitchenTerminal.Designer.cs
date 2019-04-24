@@ -115,6 +115,7 @@
             this.gvDishCollection.Location = new System.Drawing.Point(3, 3);
             this.gvDishCollection.Name = "gvDishCollection";
             this.gvDishCollection.RowTemplate.Height = 24;
+            this.gvDishCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvDishCollection.Size = new System.Drawing.Size(794, 354);
             this.gvDishCollection.TabIndex = 1;
             // 

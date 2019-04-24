@@ -151,6 +151,7 @@
             // 
             // gvOrders
             // 
+            this.gvOrders.AllowUserToAddRows = false;
             this.gvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdColumn,
@@ -165,6 +166,8 @@
             this.gvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvOrders.Size = new System.Drawing.Size(587, 276);
             this.gvOrders.TabIndex = 1;
+            this.gvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvOrders_CellContentClick);
+            this.gvOrders.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvOrders_CellFormatting);
             // 
             // IdColumn
             // 
