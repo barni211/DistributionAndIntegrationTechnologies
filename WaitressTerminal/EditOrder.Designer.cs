@@ -81,8 +81,10 @@
             this.colStatus});
             this.gvOrderedDishes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvOrderedDishes.Location = new System.Drawing.Point(3, 235);
+            this.gvOrderedDishes.MultiSelect = false;
             this.gvOrderedDishes.Name = "gvOrderedDishes";
             this.gvOrderedDishes.RowTemplate.Height = 24;
+            this.gvOrderedDishes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvOrderedDishes.Size = new System.Drawing.Size(669, 179);
             this.gvOrderedDishes.TabIndex = 1;
             // 
@@ -206,6 +208,7 @@
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove from order";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnFind
             // 

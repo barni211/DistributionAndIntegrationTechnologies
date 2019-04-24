@@ -59,6 +59,13 @@ namespace BarTenderTerminal
             //TODO: Send information to server
         }
 
+        public void AddNewOrder(Order order)
+        {
+            //TODO: Invoke in server.
+            _orderList.Add(order);
+            gvDishCollection.DataSource = _orderList;
+        }
+
         private void gvDishCollection_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

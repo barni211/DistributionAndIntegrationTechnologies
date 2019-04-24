@@ -113,3 +113,5 @@ D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\bin\Deb
 D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\bin\Debug\Model.dll
 D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\bin\Debug\Model.pdb
 D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\obj\Debug\WaitressTerminal.exe.config
+D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\bin\Debug\CommonOperations.dll
+D:\Distribution and Integration technologies\Restaurant\WaitressTerminal\bin\Debug\CommonOperations.pdb

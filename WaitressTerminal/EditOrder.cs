@@ -148,5 +148,29 @@ namespace WaitressTerminal
         {
 
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            List<Dish> orderedDishes = new List<Dish>();
+            List<Dish> dishesInGv = gvOrderedDishes.DataSource as List<Dish>;
+            if (dishesInGv != null && dishesInGv.Count > 0)
+            {
+                foreach (Dish dish in dishesInGv)
+                {
+                    orderedDishes.Add(dish);
+                }
+            }
+
+            if (gvOrderedDishes.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = gvOrderedDishes.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = gvOrderedDishes.Rows[selectedrowindex];
+                Dish dish = (Dish)selectedRow.DataBoundItem;
+                orderedDishes.Remove(dish);
+            }
+
+            gvOrderedDishes.DataSource = orderedDishes;
+            _order.Dishes = orderedDishes;
+        }
     }
 }

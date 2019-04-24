@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using CommonOperations;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace WaitressTerminal
 {
     public partial class WaitressTerminalForm : Form
     {
-        private bool _isFirstTimeLoading = true;
         private ConnectionHandler _connection;
         public WaitressTerminalForm()
         {
@@ -34,14 +34,14 @@ namespace WaitressTerminal
             Order createdOrder = editOrderForm.ReturnCreatedOrder();
             if (createdOrder != null)
             {
-                AddOrderToGv(createdOrder);
+                GvOperations.AddOrderToGv(createdOrder, gvOrders);
             }
         }
 
         private void EditOrderButton_Click(object sender, EventArgs e)
         {
             //TODO: Edit existing order in order form 
-            Order selectedOrder = GetSelectedOrder();
+            Order selectedOrder = GvOperations.GetSelectedOrder(gvOrders);
 
             if (selectedOrder != null)
             {
@@ -50,55 +50,16 @@ namespace WaitressTerminal
             }
         }
 
-        private void AddOrderToGv(Order newOrder)
-        {
-            List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
-            if (ordersFromGv != null)
-            {
-                ordersFromGv.Add(newOrder);
-            }
-            else
-            {
-                ordersFromGv = new List<Order>();
-                ordersFromGv.Add(newOrder);
-            }
-
-            //hack to refresh datagridview, looking for better solution
-            gvOrders.DataSource = null;
-            gvOrders.DataSource = ordersFromGv;
-        }
-
-        private void UpdateOrder(Order order, OrderStatus status)
-        {
-            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
-
-            List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
-            if (ordersFromGv != null)
-            {
-                ordersFromGv.ElementAt(selectedrowindex).Status = status;
-            }
-
-            gvOrders.DataSource = null;
-            gvOrders.DataSource = ordersFromGv;
-        }
-
-        private Order GetSelectedOrder()
-        {
-            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
-            return (Order)selectedRow.DataBoundItem;
-        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Order orderToSend = GetSelectedOrder();
+            Order orderToSend = GvOperations.GetSelectedOrder(gvOrders);
             //TODO: Send order to bill printer
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            Order orderToSend = GetSelectedOrder();
+            Order orderToSend = GvOperations.GetSelectedOrder(gvOrders);
 
             //Solution when we are going to send dishes independently
             //foreach (Dish dish in orderToSend.Dishes)
@@ -126,41 +87,22 @@ namespace WaitressTerminal
             {
                 SendOrderToKitchen();
             }
-            UpdateOrder(orderToSend, OrderStatus.Sended);
-
-        }
-
-        private void DeleteOrder()
-        {
-            int selectedrowindex = gvOrders.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = gvOrders.Rows[selectedrowindex];
-
-            List<Order> ordersFromGv = gvOrders.DataSource as List<Order>;
-            if (ordersFromGv != null && ordersFromGv.ElementAt(selectedrowindex).Status == OrderStatus.NotSend)
-            {
-                ordersFromGv.RemoveAt(selectedrowindex);
-                gvOrders.DataSource = null;
-                gvOrders.DataSource = ordersFromGv;
-            }
-            else
-            {
-                MessageBox.Show("Delete sended order is not allowed");
-            }
+            GvOperations.UpdateOrder(orderToSend, OrderStatus.Sended, gvOrders);
 
         }
 
         private void DeleteOrderButton_Click(object sender, EventArgs e)
         {
-            DeleteOrder();
+            GvOperations.DeleteOrder(gvOrders);
         }
 
 
         private void btnDeliver_Click(object sender, EventArgs e)
         {
-            Order orderToDeliver = GetSelectedOrder();
+            Order orderToDeliver = GvOperations.GetSelectedOrder(gvOrders);
             if (orderToDeliver.Status == OrderStatus.ReadyToPick)
             {
-                UpdateOrder(orderToDeliver, OrderStatus.Delivered);
+                GvOperations.UpdateOrder(orderToDeliver, OrderStatus.Delivered, gvOrders);
             }
             else
             {
@@ -168,6 +110,8 @@ namespace WaitressTerminal
             }
         }
 
+
+        //this method is also in GvOperations, but there is different color strategy
         private void ColorGridviewRows()
         {
             if (gvOrders.Rows.Count > 0)
@@ -193,18 +137,6 @@ namespace WaitressTerminal
                     }
                 }
             }
-
-        }
-
-
-        private void SendOrderToKitchen()
-        {
-            //TODO: Send dish to kitchen
-        }
-
-        private void SendOrderToBar()
-        {
-            //TODO: Send dish to bar
         }
 
         private void gvOrders_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -215,6 +147,16 @@ namespace WaitressTerminal
         private void gvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void SendOrderToKitchen()
+        {
+            //TODO: Send dish to kitchen
+        }
+
+        private void SendOrderToBar()
+        {
+            //TODO: Send dish to bar
         }
     }
 }
