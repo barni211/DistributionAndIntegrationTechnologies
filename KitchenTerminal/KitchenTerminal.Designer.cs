@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnInPreparation = new System.Windows.Forms.Button();
+            this.btnReady = new System.Windows.Forms.Button();
+            this.btnPicked = new System.Windows.Forms.Button();
             this.gvDishCollection = new System.Windows.Forms.DataGridView();
             this.colDishId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnInPreparation = new System.Windows.Forms.Button();
-            this.btnReady = new System.Windows.Forms.Button();
-            this.btnPicked = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -55,47 +55,9 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // gvDishCollection
-            // 
-            this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDishId,
-            this.colDishName,
-            this.colDishType,
-            this.colDishStatus});
-            this.gvDishCollection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvDishCollection.Location = new System.Drawing.Point(3, 3);
-            this.gvDishCollection.Name = "gvDishCollection";
-            this.gvDishCollection.RowTemplate.Height = 24;
-            this.gvDishCollection.Size = new System.Drawing.Size(794, 354);
-            this.gvDishCollection.TabIndex = 1;
-            // 
-            // colDishId
-            // 
-            this.colDishId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishId.HeaderText = "Dish Id";
-            this.colDishId.Name = "colDishId";
-            // 
-            // colDishName
-            // 
-            this.colDishName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishName.HeaderText = "Dish Name";
-            this.colDishName.Name = "colDishName";
-            // 
-            // colDishType
-            // 
-            this.colDishType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishType.HeaderText = "Dish Type";
-            this.colDishType.Name = "colDishType";
-            // 
-            // colDishStatus
-            // 
-            this.colDishStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishStatus.HeaderText = "Dish Status";
-            this.colDishStatus.Name = "colDishStatus";
             // 
             // flowLayoutPanel1
             // 
@@ -141,17 +103,60 @@
             this.btnPicked.UseVisualStyleBackColor = true;
             this.btnPicked.Click += new System.EventHandler(this.btnPicked_Click);
             // 
-            // Form1
+            // gvDishCollection
+            // 
+            this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDishId,
+            this.colDishName,
+            this.colDishType,
+            this.colDishStatus});
+            this.gvDishCollection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvDishCollection.Location = new System.Drawing.Point(3, 3);
+            this.gvDishCollection.Name = "gvDishCollection";
+            this.gvDishCollection.RowTemplate.Height = 24;
+            this.gvDishCollection.Size = new System.Drawing.Size(794, 354);
+            this.gvDishCollection.TabIndex = 1;
+            // 
+            // colDishId
+            // 
+            this.colDishId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishId.DataPropertyName = "Id";
+            this.colDishId.HeaderText = "Id";
+            this.colDishId.Name = "colDishId";
+            // 
+            // colDishName
+            // 
+            this.colDishName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishName.DataPropertyName = "TableNumber";
+            this.colDishName.HeaderText = "TableNumber";
+            this.colDishName.Name = "colDishName";
+            // 
+            // colDishType
+            // 
+            this.colDishType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishType.DataPropertyName = "Status";
+            this.colDishType.HeaderText = "Status";
+            this.colDishType.Name = "colDishType";
+            // 
+            // colDishStatus
+            // 
+            this.colDishStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishStatus.DataPropertyName = "Destination";
+            this.colDishStatus.HeaderText = "Destination";
+            this.colDishStatus.Name = "colDishStatus";
+            // 
+            // KitchenTerminal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "KitchenTerminal";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,15 +164,15 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnInPreparation;
+        private System.Windows.Forms.Button btnReady;
+        private System.Windows.Forms.Button btnPicked;
         private System.Windows.Forms.DataGridView gvDishCollection;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishStatus;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnInPreparation;
-        private System.Windows.Forms.Button btnReady;
-        private System.Windows.Forms.Button btnPicked;
     }
 }
 

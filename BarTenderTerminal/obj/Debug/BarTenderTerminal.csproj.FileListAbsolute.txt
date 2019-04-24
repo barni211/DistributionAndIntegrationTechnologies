@@ -110,3 +110,4 @@ D:\Distribution and Integration technologies\Restaurant\BarTenderTerminal\obj\De
 D:\Distribution and Integration technologies\Restaurant\BarTenderTerminal\obj\Debug\BarTenderTerminal.csproj.CopyComplete
 D:\Distribution and Integration technologies\Restaurant\BarTenderTerminal\obj\Debug\BarTenderTerminal.exe
 D:\Distribution and Integration technologies\Restaurant\BarTenderTerminal\obj\Debug\BarTenderTerminal.pdb
+D:\Distribution and Integration technologies\Restaurant\BarTenderTerminal\obj\Debug\BarTenderTerminal.ShowDishes.resources

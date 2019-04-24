@@ -143,5 +143,10 @@ namespace WaitressTerminal
         {
             return _order;
         }
+
+        private void gvDishCollection_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

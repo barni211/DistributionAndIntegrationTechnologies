@@ -135,6 +135,7 @@
             this.gvDishCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvDishCollection.Size = new System.Drawing.Size(669, 226);
             this.gvDishCollection.TabIndex = 0;
+            this.gvDishCollection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDishCollection_CellContentClick);
             // 
             // colDishId
             // 

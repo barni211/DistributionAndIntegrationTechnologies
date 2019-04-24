@@ -39,6 +39,8 @@ namespace BarTenderTerminal
         {
             Order orderToUpdate = GvOperations.GetSelectedOrder(gvDishCollection);
             GvOperations.UpdateOrder(orderToUpdate, OrderStatus.Preparation, gvDishCollection);
+            ShowDishes dishesForm = new ShowDishes(orderToUpdate);
+            dishesForm.Show();
             //TODO: Send information to server
         }
 
