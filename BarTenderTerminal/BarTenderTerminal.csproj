@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonOperations\CommonOperations.csproj">
+      <Project>{2F5B5A21-ECDE-4834-BD20-BDF7BD80DD39}</Project>
+      <Name>CommonOperations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{D8D1EB47-3AE5-4EBA-9868-8EF725F25AF6}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

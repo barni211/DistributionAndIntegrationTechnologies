@@ -35,9 +35,9 @@
             this.btnReady = new System.Windows.Forms.Button();
             this.btnPicked = new System.Windows.Forms.Button();
             this.colDishId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTableNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDishStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDishType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDishCollection)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -60,16 +60,19 @@
             // 
             // gvDishCollection
             // 
+            this.gvDishCollection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDishCollection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvDishCollection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDishId,
-            this.colDishName,
-            this.colDishType,
-            this.colDishStatus});
+            this.colTableNumber,
+            this.colDishStatus,
+            this.colDishType});
             this.gvDishCollection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDishCollection.Location = new System.Drawing.Point(3, 3);
+            this.gvDishCollection.MultiSelect = false;
             this.gvDishCollection.Name = "gvDishCollection";
             this.gvDishCollection.RowTemplate.Height = 24;
+            this.gvDishCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvDishCollection.Size = new System.Drawing.Size(794, 354);
             this.gvDishCollection.TabIndex = 1;
             this.gvDishCollection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDishCollection_CellContentClick);
@@ -122,29 +125,33 @@
             // 
             this.colDishId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDishId.DataPropertyName = "Id";
-            this.colDishId.HeaderText = "Dish Id";
+            this.colDishId.HeaderText = "Id";
             this.colDishId.Name = "colDishId";
+            this.colDishId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // colDishName
+            // colTableNumber
             // 
-            this.colDishName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishName.DataPropertyName = "Name";
-            this.colDishName.HeaderText = "Dish Name";
-            this.colDishName.Name = "colDishName";
-            // 
-            // colDishType
-            // 
-            this.colDishType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDishType.DataPropertyName = "Type";
-            this.colDishType.HeaderText = "Dish Type";
-            this.colDishType.Name = "colDishType";
+            this.colTableNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTableNumber.DataPropertyName = "TableNumber";
+            this.colTableNumber.HeaderText = "TableNumber";
+            this.colTableNumber.Name = "colTableNumber";
+            this.colTableNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // colDishStatus
             // 
             this.colDishStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDishStatus.DataPropertyName = "Status";
-            this.colDishStatus.HeaderText = "Dish Status";
+            this.colDishStatus.HeaderText = "Status";
             this.colDishStatus.Name = "colDishStatus";
+            this.colDishStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colDishType
+            // 
+            this.colDishType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDishType.DataPropertyName = "Destination";
+            this.colDishType.HeaderText = "Destination";
+            this.colDishType.Name = "colDishType";
+            this.colDishType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // BarTenderTerminalForm
             // 
@@ -170,9 +177,9 @@
         private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.Button btnPicked;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDishName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDishType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTableNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDishStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDishType;
     }
 }
 
