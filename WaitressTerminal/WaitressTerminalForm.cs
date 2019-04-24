@@ -99,6 +99,8 @@ namespace WaitressTerminal
         private void btnSend_Click(object sender, EventArgs e)
         {
             Order orderToSend = GetSelectedOrder();
+
+            //Solution when we are going to send dishes independently
             //foreach (Dish dish in orderToSend.Dishes)
             //{
             //    if (dish.Status != OrderStatus.NotSend)
@@ -124,6 +126,7 @@ namespace WaitressTerminal
             {
                 SendOrderToKitchen();
             }
+            UpdateOrder(orderToSend, OrderStatus.Sended);
 
         }
 
@@ -171,7 +174,7 @@ namespace WaitressTerminal
             {
                 foreach (DataGridViewRow row in gvOrders.Rows)
                 {
-                    OrderStatus status = (OrderStatus)row.Cells[3].Value;
+                    OrderStatus status = (OrderStatus)row.Cells[2].Value;
                     if (status == OrderStatus.ReadyToPick)
                     {
                         row.DefaultCellStyle.BackColor = Color.Green;
