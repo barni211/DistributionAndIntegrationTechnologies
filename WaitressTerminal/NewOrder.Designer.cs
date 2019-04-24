@@ -70,6 +70,7 @@
             this.cbDishType.Name = "cbDishType";
             this.cbDishType.Size = new System.Drawing.Size(176, 24);
             this.cbDishType.TabIndex = 3;
+
             // 
             // btnSubmit
             // 

@@ -98,7 +98,7 @@ namespace CommonOperations
                     }
 
                     OrderStatus status = (OrderStatus)row.Cells[2].Value;
-                    if ( status == OrderStatus.Picked)
+                    if (status == OrderStatus.Picked || status == OrderStatus.Delivered || status == OrderStatus.Paid)
                     {
                         row.DefaultCellStyle.BackColor = Color.Green;
                     }

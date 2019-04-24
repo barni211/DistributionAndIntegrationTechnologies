@@ -119,7 +119,7 @@ namespace WaitressTerminal
                 foreach (DataGridViewRow row in gvOrders.Rows)
                 {
                     OrderStatus status = (OrderStatus)row.Cells[2].Value;
-                    if (status == OrderStatus.ReadyToPick)
+                    if (status == OrderStatus.ReadyToPick || status == OrderStatus.Delivered)
                     {
                         row.DefaultCellStyle.BackColor = Color.Green;
                     }
@@ -131,7 +131,7 @@ namespace WaitressTerminal
                     {
                         row.DefaultCellStyle.BackColor = Color.Yellow;
                     }
-                    else if (status == OrderStatus.Done)
+                    else if (status == OrderStatus.Paid)
                     {
                         row.DefaultCellStyle.BackColor = Color.Gray;
                     }

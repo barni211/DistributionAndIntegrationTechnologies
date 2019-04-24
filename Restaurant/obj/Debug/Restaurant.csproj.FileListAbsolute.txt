@@ -116,3 +116,4 @@ D:\Distribution and Integration technologies\Restaurant\Restaurant\bin\Debug\Wai
 D:\Distribution and Integration technologies\Restaurant\Restaurant\bin\Debug\WaitressTerminal.exe.config
 D:\Distribution and Integration technologies\Restaurant\Restaurant\bin\Debug\Server.pdb
 D:\Distribution and Integration technologies\Restaurant\Restaurant\bin\Debug\Server.exe.config
+D:\Distribution and Integration technologies\Restaurant\Restaurant\obj\Debug\Restaurant.ChangeStatus.resources

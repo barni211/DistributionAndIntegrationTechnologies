@@ -43,12 +43,16 @@ namespace Restaurant
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            //TODO: Send order to printer
         }
 
         private void btnChangeStatus_Click(object sender, EventArgs e)
         {
-
+            Order currentOrder = GvOperations.GetSelectedOrder(gvOrders);
+            ChangeStatus changeStatusForm = new ChangeStatus(currentOrder.Status);
+            changeStatusForm.ShowDialog();
+            OrderStatus newStatus = changeStatusForm.GetOrderStatus();
+            GvOperations.UpdateOrder(currentOrder, newStatus, gvOrders);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
